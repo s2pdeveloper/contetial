@@ -1,0 +1,126 @@
+<div class="container-fluid contact-section">
+  <div class="row justify-content-center ">
+    <div class="col-12 contact-row">
+      <h2 class="pb-3 pb-lg-4 mb-0 text-center text-uppercase heading-text">
+        Contact Us
+      </h2>
+    </div>
+
+    <div class="col-12 py-5">
+      <div class="row justify-content-center">
+        <div
+          class="col-12 col-md-5 col-lg-5 mx-lg-3 px-3 flex-column d-flex justify-content-center align-items-center top-left"
+        >
+          <h3 class="mb-4">Let's Chat, Reach Out to us</h3>
+          <p class="desc-text text-center">
+            Have question or feedback? We're here to help. Send us a message,
+            and we'll respond back
+          </p>
+          <div class="form-part w-100 py-3">
+            <form [formGroup]="messageForm">
+              <div class="mb-3">
+                <label class="mb-1"> Your Name</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Name here"
+                  formControlName="name"
+                />
+                <span
+                  *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                  style="color: red"
+                >
+                  <span *ngIf="name?.errors?.['required']"
+                    >name is required.</span
+                  >
+                </span>
+              </div>
+              <div class="mb-3">
+                <label class="mb-1"> Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email Address"
+                  formControlName="email"
+                />
+                <span
+                  *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+                  style="color: red"
+                >
+                  <span *ngIf="email?.errors?.['required']"
+                    >Email is required.</span
+                  >
+                  <span *ngIf="email?.errors?.['pattern']"
+                    >Please enter a valid email address, like
+                    user&#64;example.com</span
+                  >
+                </span>
+              </div>
+
+              <div class="mb-3">
+                <label class="mb-1"> Your Message</label>
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  formControlName="enquiryMsg"
+                  placeholder="Your message here"
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                class="btn btn-dark py-2"
+                (click)="submit()"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- <div
+          class="col-12 col-md-5 col-lg-5 mx-lg-3 flex-column d-flex top-left"
+        >
+          <div class="map-box background-primary p-3 w-100 shadow mb-1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.9774739922013!2d79.08099571436644!3d21.07356188795075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf9d35ef5f9f%3A0xeae9caeb943a599!2sJaysons%20trading%20company!5e0!3m2!1sen!2sin!4v1750408943361!5m2!1sen!2sin"
+             class="w-100 border-0"
+              height="400"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="p-3 background-primary w-100 shadow">
+            <div
+              class="d-flex mb-2 py-2 px-3 background-muted rounded align-items-center"
+            >
+              <div class="icon rounded-circle border me-2 me-md-3">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <a [href]="'tel:' + data?.phone" target="_blank">{{
+                data?.phone
+              }}</a>
+            </div>
+            <div
+              class="d-flex mb-2 py-2 px-3 background-muted rounded align-items-center"
+            >
+              <div class="icon rounded-circle border me-2 me-md-3">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <a [href]="'mailto:' + data?.email" target="_blank">{{
+                data?.email
+              }}</a>
+            </div>
+            <div
+              class="d-flex mb-2 py-2 px-3 background-muted rounded align-items-center"
+            >
+              <div class="icon rounded-circle border me-2 me-md-3">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <p class="text-address">{{ data?.address }}</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

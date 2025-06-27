@@ -1,0 +1,128 @@
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div
+    class="container-fluid mx-2 mx-lg-5 position-relative d-flex align-items-center justify-content-between"
+  >
+  <div class="col-auto">
+    <a class="logo d-flex align-items-center" (click)="navigateTo('/')">
+      <h1 class="sitename">Folio</h1>
+    </a>
+  </div>
+
+  <div class="col-7">
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li class="m-2"><a (click)="navigateTo('/')">Home</a></li>
+        <li class="dropdown m-2">
+          <a (click)="navigateTo('/')"
+            ><span>Books</span>
+            <i class="fa-solid fa-chevron-down toggle-dropdown"></i
+          ></a>
+          <ul>
+            <li>
+              <a (click)="navigateTo('/product-details')">NETRA-ROG VIDNYANA</a>
+            </li>
+            <li>
+              <a (click)="navigateTo('/product-details')"
+                >SHIRO-KARNA-NASA & MUKHA-DANTAROGA VIDNYANA</a
+              >
+            </li>
+            <li>
+              <a (click)="navigateTo('/product-details')">Both In English</a>
+            </li>
+          </ul>
+        </li>
+        <!-- <li class="m-2">
+          <a (click)="navigateTo('/')">Qualification</a>
+        </li>
+        <li class="m-2"><a (click)="navigateTo('/')">Experience</a></li>
+        <li class="m-2">
+          <a (click)="navigateTo('/')">Achievements</a>
+        </li> -->
+  
+        <li><a (click)="navigateTo('/contact')">Contact</a></li>
+      </ul>
+      <i class="mobile-nav-toggle fa-solid fa-bars" (click)="open(content)"></i>
+    </nav>
+  </div>
+
+  </div>
+</header>
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="offcanvas.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul>
+      <li class="m-2">
+        <a (click)="scrollTo('#home'); offcanvas.dismiss('Cross click')"
+          >Home</a
+        >
+      </li>
+      <li ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button class="accordion-button" ngbAccordionButton>Books</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody class="pb-0">
+              <ng-template>
+                <p class="mb-1 accor-items"
+                  (click)="
+                    navigateTo('/product-details');
+                    offcanvas.dismiss('Cross click')
+                  "
+                >
+                  NETRA-ROG VIDNYANA
+                </p>
+                <p class="mb-1 accor-items"
+                  (click)="
+                    navigateTo('/product-details');
+                    offcanvas.dismiss('Cross click')
+                  "
+                >
+                  SHIRO-KARNA-NASA & MUKHA-DANTAROGA VIDNYANA
+                </p>
+                <p class="mb-1 accor-items"
+                  (click)="
+                    navigateTo('/product-details');
+                    offcanvas.dismiss('Cross click')
+                  "
+                >
+                  Both In English
+                </p>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </li>
+   
+      <!-- <li class="m-2">
+        <a
+          (click)="scrollTo('#qualification'); offcanvas.dismiss('Cross click')"
+          >Qualification</a
+        >
+      </li>
+      <li class="m-2">
+        <a (click)="scrollTo('#experience'); offcanvas.dismiss('Cross click')"
+          >Experience</a
+        >
+      </li>
+      <li class="m-2">
+        <a (click)="scrollTo('#achievements'); offcanvas.dismiss('Cross click')"
+          >Achievements</a
+        >
+      </li> -->
+
+      <li>
+        <a (click)="navigateTo('/contact'); offcanvas.dismiss('Cross click')"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
+</ng-template>
