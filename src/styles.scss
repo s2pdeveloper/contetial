@@ -7,71 +7,10 @@
     background-color: #b8a07e;
   }
 }
-.grid-section-split {
-  --col: 16;
-  grid-template-rows: auto 1fr;
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
 }
-.grid-block {
-  --col: 12;
-  --grid-gap-h: calc(1rem * 2);
-  --grid-gap-v: calc(calc(3.2rem * 0.9375));
-  display: grid;
-  grid-template-columns: repeat(var(--col), [col] 1fr);
-  -moz-column-gap: calc(1rem * 2);
-  column-gap: calc(1rem * 2);
-  row-gap: calc(calc(3.2rem * 0.9375));
-}
-.column {
-  flex: 1;
-  padding: 0 1rem;
-}
-
-@media screen and (max-width: 800px) {
-  .grid-block {
-    --col: 8;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .grid-block {
-    --col: 4;
-  }
-}
-
-section,
-.section {
-  color: #898989;
-  background-color: #ffffff;
-  padding-top: 60px;
-  scroll-margin-top: 80px;
-  overflow: clip;
-}
-
-@media (max-width: 1199px) {
-  section,
-  .section {
-    scroll-margin-top: 56px;
-  }
-}
-
-/*--------------------------------------------------------------
-# Global Section Titles
---------------------------------------------------------------*/
-.section-title {
-  text-align: center;
-  padding-bottom: 60px;
-  position: relative;
-}
-
-.section-title h2 {
-  font-size: 32px;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-
-.section-title p {
-  margin-bottom: 0;
-}
-
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';

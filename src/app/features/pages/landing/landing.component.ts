@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
-import { ProductsComponent } from '../products/products.component';
-import { AchievementsComponent } from '../achievements/achievements.component';
-import { ExperienceComponent } from '../experience/experience.component';
-import { QualificationDetailsComponent } from '../qualification-details/qualification-details.component';
-import { AboutComponent } from '../about/about.component';
+import { WhyContetialComponent } from '../why-contetial/why-contetial.component';
+import { CodingComponent } from '../coding/coding.component';
 import { HomeComponent } from '../home/home.component';
+import { ServicesComponent } from '../services/services.component';
+import { ExpertiseComponent } from '../expertise/expertise.component';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
   imports: [
     HomeComponent,
-    AboutComponent,
-    QualificationDetailsComponent,
-    ExperienceComponent,
-    AchievementsComponent,
-    ProductsComponent,
+    CodingComponent,
+    WhyContetialComponent,
+    ExpertiseComponent,
+    ServicesComponent
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
